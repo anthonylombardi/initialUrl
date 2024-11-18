@@ -3,32 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Question</title>
-  <script type="text/javascript">
-    function checkAnswer() {
-      // Example logic for checking the answer
-      const selectedAnswer = document.querySelector('input[name="answer"]:checked');
-      const feedback = document.getElementById("feedback");
-
-      if (selectedAnswer) {
-        if (selectedAnswer.value === "Paris") {  // Example correct answer
-          feedback.textContent = "Correct answer!";
-        } else {
-          feedback.textContent = "Incorrect answer. Try again.";
-        }
-      } else {
-        feedback.textContent = "Please select an answer before submitting.";
-      }
+  <title>Indirect Object Identification</title>
+  <style>
+    .feedback {
+      font-weight: bold;
+      margin-top: 10px;
     }
-  </script>
+  </style>
 </head>
 <body>
-  <h2>Quiz: What is the capital of France?</h2>
-  <form id="quizForm">
-    <label><input type="radio" name="answer" value="Paris"> Paris</label><br>
-    <label><input type="radio" name="answer" value="London"> London</label><br>
-    <label><input type="radio" name="answer" value="Berlin"> Berlin</label><br><br>
+  <h2>Identify the Indirect Object</h2>
+  <p><em>Example:</em> I bought <u>my mother</u> some flowers.</p>
+  <p>1. The teacher gave the students their test papers.</p>
+
+  <form id="mcqForm">
+    <label>
+      <input type="radio" name="answer" value="teacher">
+      Teacher
+    </label><br>
+    <label>
+      <input type="radio" name="answer" value="students">
+      Students
+    </label><br>
+    <label>
+      <input type="radio" name="answer" value="their test papers">
+      Their test papers
+    </label><br><br>
+
+    <button type="button" onclick="checkAnswer()">Submit</button>
   </form>
-  <p id="feedback">Select an answer and press submit.</p>
+
+  <p class="feedback" id="feedback"></p>
+
+  <script src="script.js"></script>
 </body>
 </html>
